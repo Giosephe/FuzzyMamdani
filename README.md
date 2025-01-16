@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FuzzyMamdani Library
 
 **Version:** 1.0  
@@ -202,3 +203,7 @@ For full license details, see the [LICENSE](./LICENSE) file.
 
 If you have questions, suggestions, or require a commercial license, contact:  
 **Kennet Morillo** - <kennetmorillostw@hotmail.com>
+=======
+# FuzzyMamdani
+A beginner-friendly Fuzzy Logic library for Arduino based on the Mamdani model.
+>>>>>>> fdd6a1c6d7daf879c810721466357adee12db4d8
