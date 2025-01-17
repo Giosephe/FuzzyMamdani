@@ -33,10 +33,10 @@ void setup() {
   fuzzy.setInputSet(3, eHigh);
 
   // Define output (control) fuzzy sets
-  FuzzySet cVeryLow = {{0, 2, 6}, 'T'};       // Minimal control action (Triangular)
+  FuzzySet cVeryLow = {{0, 2, 6}, 'T'};       // Minimal control adjustment (Triangular)
   FuzzySet cLow     = {{4, 6, 10, 20}, 'O'};  // Slight control adjustment (Trapezoidal)
   FuzzySet cMedium  = {{18, 30, 55}, 'T'};    // Moderate control adjustment (Triangular)
-  FuzzySet cHigh    = {{45, 70, 100, 100}, 'O'}; // Strong control with trapezoidal range
+  FuzzySet cHigh    = {{45, 70, 100, 100}, 'O'}; // Strong control adjustment (Trapezoidal)
 
   fuzzy.setOutputSet(0, cVeryLow);
   fuzzy.setOutputSet(1, cLow);
