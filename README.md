@@ -1,12 +1,11 @@
-# FuzzyMamdani Library - A Beginner-Friendly Fuzzy Logic Controller for Arduino
+# FuzzyMamdani Library
 
 **Version:** 1.0  
 **Author:** Kennet Morillo  
 **License:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International  
 
-The FuzzyMamdani library simplifies the implementation of fuzzy logic control systems based on the **Mamdani model**. Whether you're a beginner or a student, this library provides a clear path to understanding and applying fuzzy control systems.  
-
-**Applications include:** Temperature regulation, motor speed control, and irrigation systems.
+The FuzzyMamdani library simplifies the implementation of a fuzzy logic control system (based on the Mamdani model) for Arduino. 
+It is specifically designed for beginners and students, offering intuitive methods and detailed examples. Whether you're exploring fuzzy logic for the first time or building small projects, this library provides a solid foundation for understanding and applying fuzzy control systems.
 
 ---
 
@@ -30,7 +29,9 @@ The FuzzyMamdani library simplifies the implementation of fuzzy logic control sy
 - Easy configuration of fuzzy rules and membership functions.
 - Implements the **centroid method** for defuzzification.
 - Compatible with Arduino IDE.
-- Provides examples in **English** and **Spanish**.
+- Provides examples for quick setup:
+  - Using 3, 4, or 5 fuzzy sets.
+  - Examples available in **English** and **Spanish**.
 
 ---
 
@@ -38,7 +39,7 @@ The FuzzyMamdani library simplifies the implementation of fuzzy logic control sy
 
 1. Download the repository or clone it using:
    ```bash
-   git clone https://github.com/KennetMorillo/FuzzyMamdani.git
+   git clone https://github.com/Giosephe/FuzzyMamdani.git
    ```
 2. Copy the `FuzzyMamdani` folder into your Arduino `libraries` folder:
    - On Windows: `Documents/Arduino/libraries/`
@@ -98,7 +99,6 @@ error = setPoint - currentInput;
 Applies fuzzy rules and returns the output (centroid).
 
 ### Example: Temperature Control
-
 ```cpp
 FuzzyMamdani fuzzy;
 
@@ -133,7 +133,6 @@ void loop() {
 }
 ```
 ---
-
 ## FAQ
 
 **Q: What is the maximum number of fuzzy sets supported?**  
@@ -153,7 +152,75 @@ A: Use the Serial Monitor and type `setpoint X` (e.g., `setpoint 75`) to set a n
 
 ---
 
+## Provided Examples
+
+The FuzzyMamdani library includes several example sketches in **English** and **Spanish**:
+
+**English Examples**:
+- `English/FuzzyMamdani_3Sets/FuzzyMamdani_3Sets.ino`
+- `English/FuzzyMamdani_4Sets/FuzzyMamdani_4Sets.ino`
+- `English/FuzzyMamdani_5Sets/FuzzyMamdani_5Sets.ino`
+- `English/FuzzyMamdani_QuickStart/FuzzyMamdani_QuickStart.ino`
+
+**Spanish Examples**:
+- `Spanish/FuzzyMamdani_3Sets/FuzzyMamdani_3Conjuntos.ino`
+- `Spanish/FuzzyMamdani_4Sets/FuzzyMamdani_4Conjuntos.ino`
+- `Spanish/FuzzyMamdani_5Sets/FuzzyMamdani_5Conjuntos.ino`
+- `Spanish/FuzzyMamdani_QuickStart/FuzzyMamdani_InicioRapido.ino`
+
+Each example demonstrates specific use cases:
+- **FuzzyMamdani_3Sets**: Suitable for simple systems with three fuzzy sets.
+- **FuzzyMamdani_4Sets**: Balances simplicity and precision with four sets.
+- **FuzzyMamdani_5Sets**: Ideal for detailed control with five sets.
+- **FuzzyMamdani_QuickStart**: A basic interactive demo via Serial Monitor.
+
+---
+
 ## Inference Engine Details
 
-**Example:**
-Input = 40, SetPoint = 50, Error = 10. Rules applied: `eMedium -> cMedium`. Output centroid calculated: 27.5.
+The library calculates the crisp output using the **centroid method**, which involves:
+1. Calculating the membership values for input fuzzy sets.
+2. Applying the fuzzy rules to map input sets to output sets.
+3. Computing the output centroid based on the weighted average of membership functions.
+
+**Example Calculation:**
+- **Input:** 40  
+- **SetPoint:** 50  
+- **Error:** 10  
+- **Fuzzy Rule Applied:** `eMedium -> cMedium`  
+- **Membership Calculation:**  
+  - Membership of input in `eMedium`: 0.5  
+  - Membership of output in `cMedium`: 0.5  
+- **Centroid Output:**  
+  ```
+  Output = (Σ Weighted Outputs) / (Σ Membership Values)
+         = (27.5 * 0.5) / (0.5)
+         = 27.5
+  ```
+
+---
+
+## Educational Focus
+
+The FuzzyMamdani library is designed to:
+- Teach fuzzy logic principles through simple APIs.
+- Allow experimentation with various configurations.
+- Visualize fuzzy behavior via the Serial Monitor for educational purposes.
+
+---
+
+## License
+
+This library is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
+
+- Educational use is free.
+- Commercial use requires prior written authorization.
+
+For full license details, see the [LICENSE](./LICENSE) file.
+
+---
+
+## Contact
+
+If you have questions, suggestions, or require a commercial license, contact:  
+**Kennet Morillo** - <kennetmorillostw@hotmail.com>
